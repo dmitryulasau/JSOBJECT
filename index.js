@@ -60,3 +60,108 @@ const electronicProducts = {
     features: ["Xbox Game Pass", "Backward Compatibility", "HDR Gaming"],
   },
 };
+
+// 1. Problem: Access the brand of the Laptop.
+console.log("------------ 1 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "laptop") {
+    console.log(electronicProducts[product].brand);
+  }
+}
+
+// Apple
+
+// 2. Problem: Retrieve the specifications of the Smartphone.
+console.log("------------ 2 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "smartphone") {
+    console.log(electronicProducts[product].specifications);
+  } else {
+    console.log("Smartphone not found");
+  }
+}
+
+// 3. Problem: Find the price of the Smart TV.
+console.log("------------ 3 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "smart tv") {
+    console.log(electronicProducts[product].price);
+  } else {
+    console.log("Smart TV not found");
+  }
+}
+
+// 4. Problem: Access the features of the Headphones.
+console.log("------------ 4 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "headphones") {
+    console.log(electronicProducts[product].features);
+  } else {
+    console.log("Headphones not found");
+  }
+}
+
+// 5. Problem: Retrieve the controller type of the Gaming Console.
+console.log("------------ 5 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "gaming console") {
+    console.log(electronicProducts[product].specifications["controller"]);
+  }
+}
+
+// 6. Problem: Change the price of the Laptop to 1700.
+console.log("------------ 6 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "laptop") {
+    electronicProducts[product].price = 1700;
+    console.log(electronicProducts[product].price);
+  }
+}
+
+// 7. Problem: Add a new color ("Silver") to the colors of the Smartphone.
+console.log("------------ 7 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "smartphone") {
+    electronicProducts[product].specifications.colors.push("Silver");
+
+    console.log(electronicProducts[product].specifications.colors);
+  }
+}
+
+// 8. Problem: Remove the "Water Resistant" feature from the Smartphone.
+console.log("------------ 8 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "smartphone") {
+    const indexOfWR =
+      electronicProducts[product].features.indexOf("Water Resistant");
+
+    if (indexOfWR != -1) {
+      electronicProducts[product].features.splice(indexOfWR, 1);
+    } else {
+      console.log("Item not found");
+    }
+
+    console.log(electronicProducts[product].features);
+  }
+}
+
+// 9. Problem: Add a new product ("Tablet") to the electronicProducts object.
+console.log("------------ 9 ------------");
+
+electronicProducts["product6"] = {
+  name: "Tablet",
+  brand: "Unknown",
+  price: 0,
+  specifications: {},
+  features: [],
+};
+
+console.log(electronicProducts.product6);
+
+// 10. Problem: Retrieve the size options available for the Smart TV.
+console.log("------------ 10 ------------");
+for (let product in electronicProducts) {
+  if (electronicProducts[product].name.toLowerCase() === "smart tv") {
+    console.log(electronicProducts[product].specifications.sizeOptions);
+  }
+}
